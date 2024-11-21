@@ -41,7 +41,7 @@ def engine_deps():
 
 def _secretflow_deps():
     # SPU_COMMIT = "3ccae529b70b37f7312e1171eab7e5acc16ff136"
-    # PSI_COMMIT = "47aaeb9c9ccd92deb8c150b2d55302ac0070f723"
+    PSI_COMMIT = "aa0a44e5ccf0cff059adf08c747873181233b9a0"
     # HEU_COMMIT = "afa15a0ad009cb5d5e40bd1dce885b9e4d472083"
     # KUSCIA_COMMIT = "1979d1f4f17db5c2bd6c57be7a690e88fa9ce7ed"
 
@@ -63,11 +63,11 @@ def _secretflow_deps():
         http_archive,
         name = "psi",
         urls = [
-            #"https://github.com/secretflow/psi/archive/%s.tar.gz" % PSI_COMMIT,
-            "https://github.com/secretflow/psi/archive/refs/tags/v0.4.0.dev240524.tar.gz",
+            "https://github.com/secretflow/psi/archive/%s.tar.gz" % PSI_COMMIT,
+            #"https://github.com/secretflow/psi/archive/refs/tags/v0.4.0.dev240524.tar.gz",
         ],
-        # strip_prefix = "psi-%s" % PSI_COMMIT,
-        strip_prefix = "psi-0.4.0.dev240524",
+        strip_prefix = "psi-%s" % PSI_COMMIT,
+        #strip_prefix = "psi-0.4.0.dev240524",
         sha256 = "c2868fa6a9d804e6bbed9922dab6dc819ec6e180e15eafe7eb1b661302508c88",
     )
 
