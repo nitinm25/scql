@@ -68,7 +68,7 @@ def _secretflow_deps():
         ],
         strip_prefix = "psi-%s" % PSI_COMMIT,
         #strip_prefix = "psi-0.4.0.dev240524",
-        sha256 = "c2868fa6a9d804e6bbed9922dab6dc819ec6e180e15eafe7eb1b661302508c88",
+        sha256 = "024d91c2a47dd2dcec0c13f6c73d447b8d8d1f5a54ec386237fad6288a91b451",
     )
 
     maybe(
