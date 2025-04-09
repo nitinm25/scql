@@ -91,7 +91,7 @@ def _secretflow_deps():
             "https://github.com/secretflow/kuscia/archive/refs/tags/v0.7.0b0.tar.gz",
         ],
         strip_prefix = "kuscia-0.7.0b0",
-        sha256 = "76e396f9b148ec741e3c938d0a54ce9e91709466254d2f6effc8a4d50a77ff97",
+        sha256 = "14495031b9a606554837913597e9d38865460ab04a22ccf342234efe80cea204",
     )
 
 def _org_apache_arrow():

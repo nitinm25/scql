@@ -20,12 +20,17 @@ def main():
 
     args = parser.parse_args()
 
+    row_a = 6000000
+    row_b = 200000
+
+    print("Table size: ", row_a, row_b)
+
     if args.type == "2":
         print("temporary set plaintext ccl for join key in plaintext join")
         pp = subprocess.run("""docker exec -it vldb-broker_bob-1 bash -c '/home/admin/bin/brokerctl grant alice PLAINTEXT --project-id "demo" --table-name tb --column-name ID --host http://localhost:8080'""", stdout=subprocess.PIPE, shell=True)
         assert pp.returncode == 0, pp.stdout.decode("utf-8")
 
-    query = f"""select count(*) as cnt FROM (select * from ta limit {args.row}) as a INNER JOIN (select * from tb limit {args.row}) as b on a.ID = b.ID;"""
+    query = f"""select count(*) as cnt FROM (select * from ta limit {row_a}) as a INNER JOIN (select * from tb limit {row_b}) as b on a.ID = b.ID;"""
     cwd = f"""docker exec -it vldb-broker_alice-1 bash -c '/home/admin/bin/brokerctl create job --query  "{query}" --join-type {args.type}  --project-id "demo" --host http://localhost:8080 --timeout 10' """
     p = subprocess.run(cwd, stdout=subprocess.PIPE, shell=True)
     assert p.returncode == 0, p.stdout.decode("utf-8")
