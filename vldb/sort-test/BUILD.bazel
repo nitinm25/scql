@@ -32,3 +32,37 @@ spu_cc_binary(
         "@yacl//yacl/link:factory",
     ],
 )
+
+spu_cc_binary(
+    name = "sort_sbk",
+    srcs = ["sort_sbk.cc"],
+    deps = [
+        "@com_google_absl//absl/strings",
+        "@llvm-project//llvm:Support",
+        "@spulib//examples/cpp:utils",
+        "@spulib//libspu/device:io",
+        "@spulib//libspu/kernel/hlo:basic_binary",
+        "@spulib//libspu/kernel/hlo:basic_unary",
+        "@spulib//libspu/kernel/hlo:const",
+        "@spulib//libspu/kernel/hlo:geometrical",
+        "@spulib//libspu/kernel/hlo:shuffle",
+        "@yacl//yacl/link:factory",
+    ],
+)
+
+spu_cc_binary(
+    name = "sort_sbk_valid",
+    srcs = ["sort_sbk_valid.cc"],
+    deps = [
+        "@com_google_absl//absl/strings",
+        "@llvm-project//llvm:Support",
+        "@spulib//examples/cpp:utils",
+        "@spulib//libspu/device:io",
+        "@spulib//libspu/kernel/hlo:basic_binary",
+        "@spulib//libspu/kernel/hlo:basic_unary",
+        "@spulib//libspu/kernel/hlo:const",
+        "@spulib//libspu/kernel/hlo:geometrical",
+        "@spulib//libspu/kernel/hlo:shuffle",
+        "@yacl//yacl/link:factory",
+    ],
+)
