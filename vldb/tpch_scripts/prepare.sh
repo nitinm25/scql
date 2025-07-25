@@ -61,10 +61,11 @@ docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice
 
 docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant bob PLAINTEXT --project-id \"vldb_test\" --table-name bob_part --column-name p_type --host http://localhost:8080"
 docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant bob PLAINTEXT --project-id \"vldb_test\" --table-name bob_part --column-name p_partkey --host http://localhost:8080"
-docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice PLAINTEXT --project-id \"vldb_test\" --table-name bob_part --column-name p_type --host http://localhost:8080"
+docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice PLAINTEXT_AFTER_AGGREGATE --project-id \"vldb_test\" --table-name bob_part --column-name p_type --host http://localhost:8080"
 docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice PLAINTEXT_AFTER_JOIN --project-id \"vldb_test\" --table-name bob_part --column-name p_partkey --host http://localhost:8080"
 
 docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant bob PLAINTEXT --project-id \"vldb_test\" --table-name bob_orders --column-name o_orderkey --host http://localhost:8080"
 docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant bob PLAINTEXT --project-id \"vldb_test\" --table-name bob_orders --column-name o_orderpriority --host http://localhost:8080"
 docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice PLAINTEXT_AFTER_JOIN --project-id \"vldb_test\" --table-name bob_orders --column-name o_orderkey --host http://localhost:8080"
-docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice PLAINTEXT_AFTER_COMPARE --project-id \"vldb_test\" --table-name bob_orders --column-name o_orderpriority --host http://localhost:8080"
+docker exec -it vldb-broker_bob-1 bash -c "/home/admin/bin/brokerctl grant alice PLAINTEXT_AFTER_AGGREGATE --project-id \"vldb_test\" --table-name bob_orders --column-name o_orderpriority --host http://localhost:8080"
+
